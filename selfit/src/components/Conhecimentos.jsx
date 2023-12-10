@@ -3,7 +3,7 @@ import React from 'react';
 export default function Conhecimentos() {
   return (
     <div id='conhecimentos' className=''>
-      <h2 className='flex justify-center p-10 text-2xl font-black'>MEUS CONHECIMENTOS</h2>
+      <h2 className='flex justify-center p-10 text-2xl font-'>MEUS CONHECIMENTOS</h2>
 
       <div className='flex flex-wrap lg:flex-row justify-center items-center font-medium mb-20'>
         <div className='w-20 text-center m-7'>
