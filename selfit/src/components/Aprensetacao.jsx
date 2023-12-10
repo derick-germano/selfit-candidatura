@@ -1,5 +1,4 @@
 import React from 'react'
-import Link from "next/link";
 import YouTuveVideo from './YouTuveVideo';
 
 export default function Aprensetacao() {
@@ -10,7 +9,6 @@ export default function Aprensetacao() {
           <p className="mb-2 2xl:text-2xl text-xl text-white font-medium">Olá pessoas,</p>
           <h1 className="mb-2 text-5xl text-white font-black  max-w-sm">EU SOU DERICK GERMANO.</h1>
           <p className=" mb- 2xl:text-2xl text-xl text-white font-medium">Seja bem-vindo a minha web candidatura para a Selfit.</p>
-          {/* <Link href="/sobre" className="text-base font-medium text-white pl-10 pr-10 p-3  rounded-lg bg-slate-600 ">Saiba mais sobre mim</Link> */}
         </div>          
       </div>
 
