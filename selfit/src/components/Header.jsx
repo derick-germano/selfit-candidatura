@@ -1,13 +1,25 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Link from "next/link";
+import { Link as ScrollLink } from "react-scroll"; // Importe como Link aqui
 
 export default function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
     <nav className="fixed top-0 left-0 z-50 w-full bg-white border-gray-200 dark:bg-gray-900">
       <div className="2xl:max-w-screen-2xl max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <Link
-          href="https://flowbite.com/"
-          className="flex items-center space-x-3 rtl:space-x-reverse"
+        <ScrollLink
+          to="apresentacao"
+          spy={true}
+          smooth={true}
+          offset={-70}
+          duration={500}
+          className="flex items-center space-x-3 rtl:space-x-reverse cursor-pointer"
         >
           <img
             src="https://yt3.googleusercontent.com/ytc/APkrFKbFrfSQsg2ONo-x3zYGGg_tpxPzsqXrw73B58P61A=s900-c-k-c0x00ffffff-no-rj"
@@ -17,13 +29,13 @@ export default function Header() {
           <span className="self-center text-2xl font-black text-red-600 whitespace-nowrap dark:text-white">
             Selfit by Derick
           </span>
-        </Link>
+        </ScrollLink>
         <button
-          data-collapse-toggle="navbar-default"
+          onClick={toggleMenu}
           type="button"
           className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
           aria-controls="navbar-default"
-          aria-expanded="false"
+          aria-expanded={menuOpen}
         >          
           <svg
             className="w-5 h-5"
@@ -41,40 +53,55 @@ export default function Header() {
             />
           </svg>
         </button>
-        <div className="hidden w-full md:block md:w-auto" id="navbar-default">
+        <div className={`w-full md:block md:w-auto ${menuOpen ? "block" : "hidden"}`} id="navbar-default">
           <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-            <li>
-              <Link
-                href="/principal"
+            <li className="cursor-pointer">              
+              <ScrollLink
+                to="apresentacao"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
                 className="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500"
-                aria-current="page"
               >
                 Home
-              </Link>
+              </ScrollLink>
             </li>
-            <li>
-              <Link
-                href="/sobre"
+            <li className="cursor-pointer">
+              <ScrollLink
+                to="conhecimentos"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
                 className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
               >
-                Sobre
-              </Link>
+                Conhecimentos
+              </ScrollLink>
             </li>
-            <li>
-              <Link
-                href="/portfolio"
+            <li className="cursor-pointer">
+              <ScrollLink
+                to="experiencia"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
                 className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
               >
-                Portifólio
-              </Link>
+                Experiêcias
+              </ScrollLink>
             </li>
-            <li>
-              <Link
-                href="/contato"
+            <li className="cursor-pointer">
+              <ScrollLink
+                to="contato"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
                 className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
               >
                 Contato
-              </Link>
+              </ScrollLink>
             </li>
           </ul>
         </div>
