@@ -14,7 +14,7 @@ export default function Experiencia() {
                 Acripel Distribuidora Pernambuco LTDA - Estoquista
               </strong>
               <br />
-              <em>01/12/21 - Aberto</em>
+              <em>01/12/21 - 01/02/2024</em>
               <ul className="mt-2">
                 <li>Recebimento de produtos</li>
                 <li>Conferência</li>
